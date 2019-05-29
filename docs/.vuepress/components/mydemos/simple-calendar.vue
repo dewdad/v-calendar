@@ -132,7 +132,7 @@
 </template>
 
 <script>
-var faker = window.Faker = require('faker');
+var faker = require('faker');
 const { pageForThisMonth, pageForNextMonth } = require('@/utils/helpers');
 let { month: thisMonth, year: thisMonthYear } = pageForThisMonth();
 let { month: nextMonth, year: nextMonthYear } = pageForNextMonth(
@@ -211,10 +211,10 @@ export default {
       return this.calendarMeetings.length? Array.from(new Set(this.calendarMeetings.map(m => m.date.substring(0,10) + 'T10:00:00.000Z' )))/* .map(e => {let date = new Date(e); date.setHours(0,0,0,0); return date;}) */: [];
     },
     todoDates() {
-      return window.todoDates = this.todos.map(todo => todo.dates);
+      return this.todos.map(todo => todo.dates);
     },
     popovers() {
-      return window.simpleAttrs = [
+      return [
         // Todo attributes
         ...this.todos.map(todo => ({
           key: todo.id,

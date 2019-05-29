@@ -12,6 +12,7 @@ module.exports = {
   description: 'An elegant calendar and datepicker plugin for Vuejs.',
   // Google analytics
   ga: 'UA-113780759-1',
+  base: '/v-calendar/',
   head: [['link', { rel: 'icon', href: 'favicon.png' }]],
   themeConfig: {
     nav: [
@@ -110,6 +111,7 @@ module.exports = {
     ],
   },
   configureWebpack: {
+    devtool: 'source-map',
     module: {
       rules: [
         {

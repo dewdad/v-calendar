@@ -7,6 +7,8 @@ pageClass: 'homepage'
 
 <div class='text-center'>
 
-<mydemos-simple-calendar />
+<ClientOnly>
+  <mydemos-simple-calendar />
+</ClientOnly>
 
 </div>
