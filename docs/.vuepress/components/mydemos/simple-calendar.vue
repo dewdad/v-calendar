@@ -109,11 +109,30 @@
           </div>
         </v-date-picker>
       </div>
+      <div class="mb-6">
+        <h3 class="text-base semibold text-gray-700 mb-3">Meetings Calendar</h3>
+        <v-date-picker ref="meetingCal"
+            is-inline style="width: auto"
+            v-model="date" :attributes="attrsMeeting" :available-dates="meetingDates"
+            @update:topage="loadCalendarMeetings"
+          >
+            <div
+              slot="day-popover"
+              slot-scope="{ day, format, masks, attributes, updateLayout }"
+            >
+              <!--Day Header-->
+              <span class="text-xs text-gray-3 font-semibold">{{
+                format(day.date, masks.dayPopover)
+              }}</span>
+            </div>
+          </v-date-picker>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+var faker = window.Faker = require('faker');
 const { pageForThisMonth, pageForNextMonth } = require('@/utils/helpers');
 let { month: thisMonth, year: thisMonthYear } = pageForThisMonth();
 let { month: nextMonth, year: nextMonthYear } = pageForNextMonth(
@@ -126,143 +145,8 @@ nextMonth--;
 export default {
   data() {
     return {
-      highlights: [
-        {
-          highlight: 'red',
-          contentStyle: {
-            color: 'white',
-          },
-          dates: [
-            // Use single dates
-            new Date(nextMonthYear, nextMonth, 6),
-            new Date(nextMonthYear, nextMonth, 23),
-            // ...or date ranges
-            {
-              start: new Date(thisMonthYear, thisMonth, 2),
-              end: new Date(thisMonthYear, thisMonth, 4),
-            },
-            // ...or complex date patterns
-            {
-              start: new Date(thisMonthYear, thisMonth, 1),
-              ordinalWeekdays: { [-1]: 7 }, // Last Saturday of the month
-            },
-          ],
-        },
-        {
-          highlight: 'blue',
-          contentStyle: {
-            color: 'white',
-          },
-          dates: [
-            new Date(thisMonthYear, thisMonth, 1),
-            {
-              start: new Date(thisMonthYear, thisMonth, 10),
-              end: new Date(thisMonthYear, thisMonth, 12),
-            },
-            {
-              start: new Date(nextMonthYear, nextMonth, 22),
-              end: new Date(nextMonthYear, nextMonth, 26),
-            },
-          ],
-        },
-        {
-          highlight: 'teal',
-          contentStyle: {
-            color: 'white',
-          },
-          dates: [
-            new Date(thisMonthYear, thisMonth, 14),
-            {
-              start: new Date(thisMonthYear, thisMonth, 24),
-              end: new Date(thisMonthYear, thisMonth, 25),
-            },
-            new Date(thisMonthYear, thisMonth, 28),
-            new Date(nextMonthYear, nextMonth, 4),
-            {
-              start: new Date(nextMonthYear, nextMonth, 16),
-              end: new Date(nextMonthYear, nextMonth, 17),
-            },
-          ],
-        },
-      ],
-      dots: [
-        {
-          dot: 'red',
-          dates: [
-            new Date(thisMonthYear, thisMonth, 1),
-            new Date(thisMonthYear, thisMonth, 10),
-            new Date(thisMonthYear, thisMonth, 22),
-            new Date(nextMonthYear, nextMonth, 6),
-            new Date(nextMonthYear, nextMonth, 16),
-          ],
-        },
-        {
-          dot: 'teal',
-          dates: [
-            new Date(thisMonthYear, thisMonth, 4),
-            new Date(thisMonthYear, thisMonth, 10),
-            new Date(thisMonthYear, thisMonth, 15),
-            new Date(nextMonthYear, nextMonth, 1),
-            new Date(nextMonthYear, nextMonth, 12),
-            {
-              start: new Date(nextMonthYear, nextMonth, 20),
-              end: new Date(nextMonthYear, nextMonth, 25),
-            },
-          ],
-        },
-        {
-          dot: 'blue',
-          dates: [
-            new Date(thisMonthYear, thisMonth, 12),
-            new Date(thisMonthYear, thisMonth, 26),
-            new Date(thisMonthYear, thisMonth, 15),
-            new Date(nextMonthYear, nextMonth, 9),
-            new Date(nextMonthYear, nextMonth, 5),
-            new Date(nextMonthYear, nextMonth, 6),
-            new Date(nextMonthYear, nextMonth, 20),
-            new Date(nextMonthYear, nextMonth, 25),
-          ],
-        },
-      ],
-      bars: [
-        {
-          bar: 'red',
-          dates: [
-            new Date(thisMonthYear, thisMonth, 1),
-            new Date(thisMonthYear, thisMonth, 10),
-            new Date(thisMonthYear, thisMonth, 22),
-            new Date(nextMonthYear, nextMonth, 6),
-            new Date(nextMonthYear, nextMonth, 16),
-          ],
-        },
-        {
-          bar: 'teal',
-          dates: [
-            new Date(thisMonthYear, thisMonth, 4),
-            new Date(thisMonthYear, thisMonth, 10),
-            new Date(thisMonthYear, thisMonth, 15),
-            new Date(nextMonthYear, nextMonth, 1),
-            new Date(nextMonthYear, nextMonth, 12),
-            {
-              start: new Date(nextMonthYear, nextMonth, 20),
-              end: new Date(nextMonthYear, nextMonth, 25),
-            },
-          ],
-        },
-        {
-          bar: 'blue',
-          dates: [
-            new Date(thisMonthYear, thisMonth, 12),
-            new Date(thisMonthYear, thisMonth, 26),
-            new Date(thisMonthYear, thisMonth, 15),
-            new Date(nextMonthYear, nextMonth, 9),
-            new Date(nextMonthYear, nextMonth, 5),
-            new Date(nextMonthYear, nextMonth, 6),
-            new Date(nextMonthYear, nextMonth, 20),
-            new Date(nextMonthYear, nextMonth, 25),
-          ],
-        },
-      ],
+      calendarMeetings: [],
+      // poduces result like this: [{"count":1,"date":"2019-07-11T06:33:14.192Z"},{"count":1,"date":"2019-08-02T17:58:30.068Z"},{"count":2,"date":"2019-08-01T21:41:28.362Z"},{"count":1,"date":"2019-07-31T06:03:56.681Z"},{"count":3,"date":"2019-07-11T22:08:02.942Z"},{"count":1,"date":"2019-07-27T08:04:40.611Z"},{"count":1,"date":"2019-06-04T20:19:18.179Z"},{"count":1,"date":"2019-06-16T14:44:35.536Z"},{"count":4,"date":"2019-05-30T20:02:52.421Z"},{"count":3,"date":"2019-06-17T11:13:41.814Z"}]
       incId: 5,
       editId: 0,
       todos: [
@@ -306,6 +190,26 @@ export default {
     };
   },
   computed: {
+    attrsMeeting() {
+      console.log('recomputing calendar attributes')
+      return this.calendarMeetings.map(meetingsDay => ({
+        // key: todo.id,
+        dates: meetingsDay.date, // new Date(meetingsDay.date),
+        // customData: meetingsDay['meetingMetaData'],
+        // order: todo.id,
+        dot: 'blue' /* {
+          color: todo.color,
+          class: todo.isComplete ? 'opacity-25' : '',
+        } */,
+        popover: {
+          visibility: 'hover',
+        }
+      }));
+    },
+    meetingDates() {
+      console.log('recomputing available dates');
+      return this.calendarMeetings.length? Array.from(new Set(this.calendarMeetings.map(m => m.date.substring(0,10) + 'T10:00:00.000Z' )))/* .map(e => {let date = new Date(e); date.setHours(0,0,0,0); return date;}) */: [];
+    },
     todoDates() {
       return window.todoDates = this.todos.map(todo => todo.dates);
     },
@@ -335,6 +239,15 @@ export default {
     },
   },
   methods: {
+    loadCalendarMeetings(){
+        // if I call initCalendarMeetings() here the calendar will show an inconsistant
+    },
+    initCalendarMeetings(){
+      this.calendarMeetings = (length => Array.from({length},()=>({
+        date: faker.unique(faker.date.future,[.2]).toISOString(), // date in .2 years from now
+        count: faker.random.number({min:1, max:6})
+      })))(10);
+    },
     addTodo(day) {
       this.editId = ++this.incId;
       this.todos.push({
@@ -355,6 +268,10 @@ export default {
       this.todos = this.todos.filter(t => t !== todo);
       // updateLayout();
     },
+  },
+  mounted(){
+    window.myDemos = this;
+    this.initCalendarMeetings()
   },
   directives: {
     focusSelect: {

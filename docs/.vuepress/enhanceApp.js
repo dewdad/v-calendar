@@ -2,6 +2,7 @@ import VCalendar from '../../src/lib';
 import './styles/tailwind.css';
 
 export default ({ Vue }) => {
+  Vue.config.devtools = true;
   Vue.use(VCalendar, {
     locales: {
       'pt-PT': {
