@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[52],{1760:function(e,a,n){"use strict";n.r(a);var t={data:()=>({range:{start:new Date(2018,0,16),end:new Date(2018,0,19)}})},s=n(3),r=Object(s.a)(t,function(){var e=this,a=e.$createElement,n=e._self._c||a;return n("div",{staticClass:"example"},[n("v-date-picker",{style:{minWidth:"220px"},attrs:{mode:"range","show-caps":""},model:{value:e.range,callback:function(a){e.range=a},expression:"range"}})],1)},[],!1,null,null,null);a.default=r.exports}}]);
+//# sourceMappingURL=52.1e35e3ab.js.map

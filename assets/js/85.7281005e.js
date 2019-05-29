@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[85],{1770:function(t,e,a){"use strict";a.r(e);var n={data:()=>({theme:{isDark:!0}})},r=a(3),s=Object(r.a)(n,function(){var t=this.$createElement;return(this._self._c||t)("v-calendar",{attrs:{"is-dark":""}})},[],!1,null,null,null);e.default=s.exports}}]);
+//# sourceMappingURL=85.7281005e.js.map

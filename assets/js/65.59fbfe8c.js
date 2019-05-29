@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[65],{1773:function(s,t,e){"use strict";e.r(t);var n={computed:{layout(){return this.$screens({default:{columns:1,rows:1,isExpanded:!0},lg:{columns:2,rows:2,isExpanded:!1}})}}},a=e(3),l=Object(a.a)(n,function(){var s=this.$createElement,t=this._self._c||s;return t("div",{staticClass:"example"},[t("v-calendar",{attrs:{columns:this.layout.columns,rows:this.layout.rows,"is-expanded":this.layout.isExpanded}})],1)},[],!1,null,null,null);t.default=l.exports}}]);
+//# sourceMappingURL=65.59fbfe8c.js.map

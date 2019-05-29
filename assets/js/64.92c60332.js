@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[64],{1862:function(e,t,n){"use strict";n.r(t);var a=n(3),s=Object(a.a)({},function(){var e=this.$createElement,t=this._self._c||e;return t("div",{staticClass:"example"},[t("v-calendar",{attrs:{"is-expanded":""}})],1)},[],!1,null,null,null);t.default=s.exports}}]);
+//# sourceMappingURL=64.92c60332.js.map

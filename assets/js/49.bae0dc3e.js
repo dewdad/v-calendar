@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[49],{1777:function(e,a,t){"use strict";t.r(a);var n={data:()=>({date:null})},l=t(3),i=Object(l.a)(n,function(){var e=this,a=e.$createElement,t=e._self._c||a;return t("div",{staticClass:"example"},[t("v-date-picker",{attrs:{"min-date":new Date(2018,0,1),"max-date":new Date(2018,0,31),"is-inline":""},model:{value:e.date,callback:function(a){e.date=a},expression:"date"}})],1)},[],!1,null,null,null);a.default=i.exports}}]);
+//# sourceMappingURL=49.bae0dc3e.js.map

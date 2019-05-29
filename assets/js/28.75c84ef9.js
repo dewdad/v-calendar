@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[28],{1806:function(t,a,e){"use strict";e.r(a);var s={data:()=>({attrs:[{key:"today",highlight:"red",dates:new Date}]})},n=e(3),r=Object(n.a)(s,function(){var t=this.$createElement,a=this._self._c||t;return a("div",{staticClass:"example"},[a("v-calendar",{attrs:{attributes:this.attrs}})],1)},[],!1,null,null,null);a.default=r.exports}}]);
+//# sourceMappingURL=28.75c84ef9.js.map

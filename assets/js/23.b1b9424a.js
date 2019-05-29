@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[23],{1825:function(t,e,a){"use strict";a.r(e);var n={data:()=>({date:null,attrs:[{key:1,highlight:!0,dates:[new Date]}]})},l=a(3),r=Object(l.a)(n,function(){var t=this,e=t.$createElement;return(t._self._c||e)("v-date-picker",{attrs:{attributes:t.attrs,mode:"range"},model:{value:t.date,callback:function(e){t.date=e},expression:"date"}})},[],!1,null,null,null);e.default=r.exports}}]);
+//# sourceMappingURL=23.b1b9424a.js.map

@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[66],{1863:function(e,s,t){"use strict";t.r(s);var n=t(3),l=Object(n.a)({},function(){var e=this.$createElement,s=this._self._c||e;return s("div",{staticClass:"example"},[s("v-calendar",{attrs:{columns:this.$screens({lg:2},1)}})],1)},[],!1,null,null,null);s.default=l.exports}}]);
+//# sourceMappingURL=66.b6abbdf3.js.map

@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[55],{1757:function(e,a,t){"use strict";t.r(a);var n={data:()=>({date:new Date(2018,0,25)})},l=t(3),c=Object(l.a)(n,function(){var e=this,a=e.$createElement,t=e._self._c||a;return t("div",{staticClass:"example"},[t("v-date-picker",{model:{value:e.date,callback:function(a){e.date=a},expression:"date"}})],1)},[],!1,null,null,null);a.default=c.exports}}]);
+//# sourceMappingURL=55.5c38ae59.js.map
