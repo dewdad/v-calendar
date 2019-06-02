@@ -19,7 +19,7 @@ git commit -m 'deploy'
 # if you are deploying to https://<USERNAME>.github.io
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
-# if you are deploying to https://<USERNAME>.github.io/<REPO>
+# if you are deploying to https://<USERNAME>.github.io/<REPO>, leave master this is a new repo every time the script is run
 git push -f https://github.com/dewdad/v-calendar.git master:gh-pages
 
 cd -

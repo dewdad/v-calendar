@@ -20,7 +20,7 @@ And of course, V-Calendar is responsive and mobile friendly.
 
 ## Component
 
-`v-calendar` is the core component. By default, it has a neutral design that should blend nicely within any web application, with various layout configuration options: 
+`v-calendar` is the core component. By default, it has a neutral design that should blend nicely within any web application, with various layout configuration options:
   * Responsive multi-row and multi-column layouts
   * Slot support for custom header and day content
   * Semantic-inspired navigation popover
@@ -484,7 +484,7 @@ When using `max-date`, this also prevents the user from navigating to pages afte
 
 #### 3. Explicitly via `disabled-dates`
 
-When using `disabled-dates`, you can use a full date expression to specify a set of disabled dates. That is, a date object, date range object, date pattern or an array of either of these may be used. 
+When using `disabled-dates`, you can use a full date expression to specify a set of disabled dates. That is, a date object, date range object, date pattern or an array of either of these may be used.
 
 :::tip
 `disabled-dates` may be used in combination with the `min-date` and `max-date` props.
