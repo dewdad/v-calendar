@@ -240,9 +240,10 @@ export default {
   },
   methods: {
     loadCalendarMeetings(){
-        // if I call initCalendarMeetings() here the calendar will show an inconsistant
+        this.initCalendarMeetings(); // this has been fixed // if I call this.initCalendarMeetings() here the calendar will show an inconsistant
     },
     initCalendarMeetings(){
+      console.log('calendar meetings intialized')
       this.calendarMeetings = (length => Array.from({length},()=>({
         date: faker.unique(faker.date.future,[.2]).toISOString(), // date in .2 years from now
         count: faker.random.number({min:1, max:6})
