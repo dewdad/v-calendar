@@ -230,13 +230,13 @@ The `.sync` modifier does not work with this prop, unlike `to-page`.
 **Default:** `undefined`
 
 <!--
-### 
+###
 
-**Type:** 
+**Type:**
 
-**Description:** 
+**Description:**
 
-**Default:** 
+**Default:**
 -->
 
 
@@ -324,11 +324,11 @@ mounted() {
 ```
 
 <!--
-### 
+###
 
-**Description:** 
+**Description:**
 
-**Params:** 
+**Params:**
 -->
 
 ## Slots
@@ -344,24 +344,6 @@ mounted() {
 ### `nav-left-button`
 
 **Description:** Calendar navigation header button on the left side for moving to the previous page(s).
-
-### `nav-right-button`
-
-**Description:** Calendar navigation header button on the right side for moving to the next page(s).
-
-## Scoped Slots
-
-### `header`
-
-**Description:** Calendar header. Use slots below for specific header sections.
-
-**Props:** [`page` props](./page-object.md)
-
-### `header-title`
-
-**Description:** Calendar header title. This slot is animated if `title-transition` is assigned.
-
-**Props:** [`page` props](./page-object.md)
 
 ### `day-content`
 
@@ -392,10 +374,26 @@ mounted() {
 | `updateLayout` | Function | Call to forcefully update the popover layout (such as when content changes are made) |
 | `hide` | Function | Call to forcefully hide the popover |
 
+### `header-left-button`
+
+**Description:** Calendar header button on the left side for moving to the previous page(s).
+
+### `header-right-button`
+
+**Description:** Calendar header button on the right side for moving to the next page(s).
+
+### `nav-left-button`
+
+**Description:** Calendar navigation header button on the left side for moving to the previous page(s).
+
+### `nav-right-button`
+
+**Description:** Calendar navigation header button on the right side for moving to the next page(s).
+
 <!--
-### 
+###
 
-**Description:** 
+**Description:**
 
-**Props:** 
+**Props:**
 -->
